@@ -1,0 +1,19 @@
+on post-fs-data
+    chmod 0660 /dev/focaltech_fp
+    chmod 0660 /dev/spidev0.0
+    chown system system /dev/focaltech_fp
+    chown system system /dev/spidev0.0 
+
+    mkdir /data/vendor/focaltech 0760 system system
+    restorecon /data/vendor/focaltech
+
+service vendor.focaltech.fps_hal /vendor/bin/hw/vendor.focaltech.fingerprint@1.0-service
+    class late_start
+    user system
+    group system input
+
+on post-fs
+    insmod /vendor_dlkm/lib/modules/focaltech_fp.ko
+
+on factorytest-fs
+    insmod /vendor_dlkm/lib/modules/focaltech_fp.ko

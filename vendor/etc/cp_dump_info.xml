@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<modem_info>
+	<partion_cnt val="1"/>
+	<partion_item>
+		<partition00 base="0x800000"     size="0x40000"   name="sp_aon"	  mini_dump_flag="1"/>
+	</partion_item>
+</modem_info>

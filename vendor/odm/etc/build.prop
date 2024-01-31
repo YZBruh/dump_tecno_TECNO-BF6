@@ -1,0 +1,37 @@
+####################################
+# from generate-common-build-props
+# These properties identify this partition image.
+####################################
+ro.product.odm.brand=TECNO
+ro.product.odm.device=TECNO-BF6
+ro.product.odm.manufacturer=TECNO
+ro.product.odm.model=TECNO BF6
+ro.product.odm.name=BF6-OP
+ro.odm.product.cpu.abilist=armeabi-v7a,armeabi
+ro.odm.product.cpu.abilist32=armeabi-v7a,armeabi
+ro.odm.product.cpu.abilist64=
+ro.odm.build.date=Wed Jan 11 21:08:49 CST 2023
+ro.odm.build.date.utc=1673442529
+ro.odm.build.fingerprint=TECNO/BF6-OP/TECNO-BF6:12/SP1A.210812.001/230111V280:user/release-keys
+ro.odm.build.id=SP1A.210812.001
+ro.odm.build.tags=release-keys
+ro.odm.build.type=user
+ro.odm.build.version.incremental=230111V280
+ro.odm.build.version.release=12
+ro.odm.build.version.release_or_codename=12
+ro.odm.build.version.sdk=31
+ro.build.version.incremental=230111V280
+transsion.device.name=TECNO POP 7
+ro.build.fingerprint=TECNO/BF6-OP/TECNO-BF6:12/SP1A.210812.001/230111V280:user/release-keys
+ro.build.display.id=BF6-SE668SABCDE-SGo-OP-230111V280
+persist.sys.tran.device.name=TECNO POP 7
+ro.product.name=BF6-OP
+####################################
+# from variable ADDITIONAL_ODM_PROPERTIES
+####################################
+####################################
+# from variable PRODUCT_ODM_PROPERTIES
+####################################
+# Auto-added by post_process_props.py
+persist.sys.usb.config=none
+# end of file

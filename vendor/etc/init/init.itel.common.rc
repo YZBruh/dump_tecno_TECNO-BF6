@@ -1,0 +1,112 @@
+on property:persist.sys.device_provisioned=1 && property:persist.vendor.cam.country=404 && property:persist.vendor.dualapp.support=yes
+    setprop ro.com.google.rlz_ap_whitelist YA
+    setprop ro.com.google.rlzbrandcode TSSN
+
+on property:persist.vendor.cam.country=*
+    setprop persist.vendor.country ${persist.vendor.cam.country}
+
+ on init
+    insmod ${ro.vendor.ko.mount.point}/odmko/adaptive-ts.ko
+
+on post-fs
+    restorecon /tranfs/
+    chown system system /tranfs/
+    chmod 777 /tranfs/
+    chmod 660 /dev/tranlog
+    chown root system /dev/tranlog
+    insmod ${ro.vendor.ko.mount.point}/odmko/adaptive-ts.ko
+
+on boot
+	chmod 0666 /sys/devices/platform/tran_charger/OTG_CTL
+	chown system system /sys/devices/platform/tran_charger/OTG_CTL
+    chmod 0664 /sys/devices/platform/extcon-gpio/extcon_hostenable
+    chown system system /sys/devices/platform/extcon-gpio/extcon_hostenable
+    chmod 0664 /sys/devices/platform/extcon-gpio/extcon_otg_status
+    chown system system /sys/devices/platform/extcon-gpio/extcon_otg_status
+    chmod 0664 /sys/devices/platform/extcon-gpio/extcon_is_support_otg
+    chown system system /sys/devices/platform/extcon-gpio/extcon_is_support_otg
+    chmod 0664 /sys/devices/platform/extcon-gpio/extcon_otg_id
+    chown system system /sys/devices/platform/extcon-gpio/extcon_otg_id
+    chmod 0664 /proc/lcd_cmd/display_timings
+    chown system system /proc/lcd_cmd/display_timings
+    chmod 0664 /proc/lcd_cmd/power_off_sequence
+    chown system system /proc/lcd_cmd/power_off_sequence
+    chmod 0664 /proc/lcd_cmd/power_on_sequence
+    chown system system /proc/lcd_cmd/power_on_sequence
+    chmod 0664 /proc/lcd_cmd/suspend_cmd
+    chown system system /proc/lcd_cmd/suspend_cmd
+    chmod 0664 /proc/lcd_cmd/resume_cmd
+    chown system system /proc/lcd_cmd/resume_cmd
+    chmod 0664 /proc/lcd_cmd/init_cmd
+    chown system system /proc/lcd_cmd/init_cmd
+    chown system system /sys/class/power_supply/battery/transsion_charge_type
+    chown system system /sys/transsion/misc/fp_match
+    chmod 0666 /sys/class/power_supply/battery/thermal_current
+    chown system system /sys/class/power_supply/battery/thermal_current
+    chmod 0664 /sys/class/backlight/sprd_backlight/cabc_adaption
+    chown system system /sys/class/backlight/sprd_backlight/cabc_adaption
+    chmod 0664 /sys/class/backlight/sprd_backlight/brightness_ext
+    chown system system /sys/class/backlight/sprd_backlight/brightness_ext
+    chown system system /sys/class/sprd_sensorhub_tp/device/psensor_enable
+    chmod 660 /sys/class/sprd_sensorhub_tp/device/psensor_enable
+    chown system system /sys/class/sprd_sensorhub_tp/device/psensor_flush
+    chmod 660 /sys/class/sprd_sensorhub_tp/device/psensor_flush
+    restorecon -R /sys/board_properties/virtualkeys.adaptive_ts
+    # add for sleep_mode
+    chmod 0664 /sys/class/switch/sleep_mode/enable_sleep_mode
+    chown system system /sys/class/switch/sleep_mode/enable_sleep_mode
+    chmod 0664 /sys/class/switch/sleep_mode/start_seconds
+    chown system system /sys/class/switch/sleep_mode/start_seconds
+    chmod 0664 /sys/class/switch/sleep_mode/end_seconds
+    chown system system /sys/class/switch/sleep_mode/end_seconds
+    #add for tp gesture
+    chmod 0664 /sys/transsion/gesture/global_enable
+    chown system system /sys/transsion/gesture/global_enable
+    chmod 0220 /sys/transsion/gesture/single_disable
+    chown system system /sys/transsion/gesture/single_disable
+    chmod 0664 /sys/transsion/gesture/single_enable
+    chown system system /sys/transsion/gesture/single_enable
+    chmod 0444 /sys/transsion/gesture/support
+    chown system system /sys/transsion/gesture/support
+    #add for Sprd platform support MTK flash device node
+    chmod 0666 /sys/class/torch/torch/torch_level
+    chown system system /sys/class/torch/torch/torch_level
+    chmod 0666 /sys/class/sub_torch/sub_torch/sub_torch_level
+    chown system system sys/class/sub_torch/sub_torch/sub_torch_level
+    chmod 0666 /sys/devices/virtual/torch/torch/torch_level
+    chown system system /sys/devices/virtual/torch/torch/torch_level
+    chmod 0666 /sys/devices/virtual/sub_torch/sub_torch/sub_torch_level
+    chown system system /sys/devices/virtual/sub_torch/sub_torch/sub_torch_level
+    chmod 0666 /dev/st21nfc
+    chown root system /dev/st21nfc
+
+	chown system system /sys/devices/platform/tran_battery_aging/AGING_CALCULATE
+	chown 0666 /sys/devices/platform/tran_battery_aging/AGING_CALCULATE
+	chown system system /sys/devices/platform/tran_battery_aging/AGING_RESET
+	chown 0666 system /sys/devices/platform/tran_battery_aging/AGING_RESET
+
+    #SR: add for BFLSELS-317 cabc mode scene adaptation
+    chmod 0664 /sys/class/display/panel0/cabc_mode
+    chown system system /sys/class/display/panel0/cabc_mode
+
+	
+on boot && property:persist.sys.tran.device.name=*
+    write /config/usb_gadget/g1/strings/0x409/product ${persist.sys.tran.device.name}
+
+on factorytest-start
+    insmod ${ro.vendor.ko.mount.point}/odmko/adaptive-ts.ko
+    chown system system /sys/class/sprd_sensorhub_tp/device/psensor_enable
+    chmod 660 /sys/class/sprd_sensorhub_tp/device/psensor_enable
+    chown system system /sys/class/sprd_sensorhub_tp/device/psensor_flush
+    chmod 660 /sys/class/sprd_sensorhub_tp/device/psensor_flush
+
+on property:ro.boot.iteldebug=1 && property:ro.debuggable=0
+    start console
+
+on post-fs-data
+    chown system system /mnt/vendor/productinfo/sensor_calibration_data/light
+    chmod 666 /mnt/vendor/productinfo/sensor_calibration_data/light
+    chown system system /mnt/vendor/productinfo/sensor_calibration_data/proximity
+    chmod 666 /mnt/vendor/productinfo/sensor_calibration_data/proximity
+    chown system system /mnt/vendor/productinfo/sensor_calibration_data/acc
+    chmod 666 /mnt/vendor/productinfo/sensor_calibration_data/acc

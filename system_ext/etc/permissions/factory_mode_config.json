@@ -1,0 +1,189 @@
+[
+  {
+    "key": "charge_vibrate",
+    "type": "ab",
+    "auto_test": true,
+    "config": {
+      "enable_electric": false,
+      "enable_charge_light": true,
+      "enable_vibrate": true
+    },
+    "index_a": 0,
+    "index_b": 0
+  },
+  {
+    "key": "fingerprint",
+    "type": "ab",
+    "auto_test": true,
+    "index_a": 1,
+    "index_b": 1,
+    "config":{
+        "result_success_code_focal_tee":-1,
+        "result_success_code_cd_tee":0
+    }
+  },
+  {
+    "key": "mic",
+    "type": "a",
+    "index_a": 2
+  },
+  {
+    "key": "headset",
+    "type": "a",
+    "index_a": 3
+  },
+  {
+    "key": "fm",
+    "type": "a",
+    "auto_test": true,
+    "index_a": 4
+  },
+  {
+    "key": "lcd",
+    "type": "abm",
+    "index_a": 5,
+    "index_b": 2,
+    "index_m": 4
+  },
+  {
+    "key": "speaker",
+    "type": "a",
+    "index_a": 6
+  },
+  {
+    "key": "base_info",
+    "type": "ab",
+    "auto_test": true,
+    "config": {
+      "google_key": "doujia",
+      "tee_type": "doujia"
+    },
+    "index_a": 7,
+    "index_b": 3
+  },
+  {
+    "key": "psensor_calibration",
+    "type": "ab",
+    "auto_test": true,
+    "index_a": 8,
+    "index_b": 4
+  },
+  {
+    "key": "psensor_test",
+    "type": "ab",
+    "auto_test": true,
+    "index_a": 9,
+    "index_b": 5
+  },
+  {
+    "key": "receiver_vibrate",
+    "type": "a",
+    "index_a": 10
+  },
+  {
+    "key": "back_camera2",
+    "type": "abm",
+    "index_a": 11,
+    "index_b": 6,
+    "index_m": 0
+  },
+  {
+    "key": "front_camera2",
+    "type": "abm",
+    "index_a": 12,
+    "index_b": 7,
+    "index_m": 1
+  },
+  {
+    "key": "flash",
+    "type": "abm",
+    "auto_test": true,
+    "config": {
+      "back_flash_path": "/sys/devices/virtual/misc/sprd_flash/test",
+      "front_flash_path": "/sys/devices/virtual/misc/sprd_flash/test",
+      "sprd_back_config_command": "0x1f06",
+      "back_on": "0x1f00",
+      "back_off": "0x1f01",
+      "sprd_front_config_command": "0x9f06",
+      "front_on": "0x9f00",
+      "front_off": "0x9f01"
+    },
+    "index_a": 13,
+    "index_b": 8,
+    "index_m": 2
+  },
+  {
+    "key": "search",
+    "type": "ab",
+    "auto_test": true,
+    "index_a": 14,
+    "index_b": 9
+  },
+  {
+    "key": "lsensor_calibration",
+    "type": "ab",
+    "auto_test": true,
+    "index_a": 15,
+    "index_b": 10
+  },
+  {
+    "key": "lsensor_test",
+    "type": "ab",
+    "auto_test": true,
+    "index_a": 16,
+    "index_b": 11
+  },
+  {
+    "key": "gsensor_calibration",
+    "type": "ab",
+    "auto_test": true,
+    "index_a": 17,
+    "index_b": 12
+  },
+  {
+    "key": "gsensor_test",
+    "type": "ab",
+    "auto_test": true,
+    "index_a": 18,
+    "index_b": 13
+  },
+  {
+    "key": "sensor",
+    "type": ""
+  },
+  {
+    "key": "tp",
+    "type": "abm",
+    "index_a": 19,
+    "index_b": 15,
+    "index_m": 3
+  },
+  {
+    "key": "key",
+    "type": "ab",
+    "index_a": 20,
+    "index_b": 16
+  },
+  {
+    "key": "card",
+    "type": "abm",
+    "auto_test": true,
+    "index_a": 21,
+    "index_b": 17,
+    "index_m": 5
+  },
+  {
+    "key": "light",
+    "type": ""
+  },
+  {
+    "key": "otg",
+    "type": "a",
+    "only_manual": true,
+    "index_a": 22
+  },
+  {
+    "key": "gyroscope",
+    "type": ""
+  }
+]

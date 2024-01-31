@@ -1,0 +1,20 @@
+## BF6-user 12 SP1A.210812.001 280 release-keys
+- Manufacturer: tecno
+- Platform: sp9863a
+- Codename: TECNO-BF6
+- Brand: TECNO
+- Flavor: BF6-user
+- Release Version: 12
+- Kernel Version: 5.4.161
+- Id: SP1A.210812.001
+- Incremental: 230111V280
+- Tags: release-keys
+- CPU Abilist: armeabi-v7a,armeabi
+- A/B Device: true
+- Treble Device: true
+- Locale: en-US
+- Screen Density: undefined
+- Fingerprint: TECNO/BF6-OP/TECNO-BF6:12/SP1A.210812.001/230111V280:user/release-keys
+- OTA version: 
+- Branch: BF6-user-12-SP1A.210812.001-280-release-keys
+- Repo: tecno_tecno-bf6_dump

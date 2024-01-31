@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- SR:Modify for cabc mode scene adaptation by jingwenqiang on 20221221 -->
+<cabc>
+	<config cabc_mode="0" component="com.android.launcher3"/>
+	<config cabc_mode="0" component="com.google.android.apps.photosgo"/>
+	<config cabc_mode="0" component="com.reallytek.wg"/>
+	<config cabc_mode="1" component="com.transsion.itel.launcher"/>
+	<config cabc_mode="3" component="com.transsion.camera"/>
+	<config cabc_mode="3" component="com.rovio.angrybirds"/>
+	<config cabc_mode="3" component="com.rovio.angrybirdsseasons"/>
+	<config cabc_mode="3" component="com.tencent.mobileqq"/>
+	<config cabc_mode="3" component="com.android.chrome"/>
+	<config cabc_mode="3" component="com.google.android.apps.youtube.music"/>
+	<config cabc_mode="3" component="com.google.android.apps.messaging"/>
+	<config cabc_mode="3" component="com.google.android.gm"/>
+	<config cabc_mode="2" component="com.android.settings"/>
+	<config cabc_mode="3" component="com.gallery20"/>
+	<config cabc_mode="3" component="com.sh.smart.caller"/>
+	<config cabc_mode="3" component="com.tencent.mm"/>
+	<config cabc_mode="3" component="com.sina.weibo"/>
+</cabc>
